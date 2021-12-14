@@ -1,0 +1,89 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="repo"
+            type="com.thao.gitclient.model.Repo" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/myNavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:orientation="vertical">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRepoName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textStyle="bold"
+            android:textColor="@color/blue"
+            android:textSize="18dp"
+            tools:text="Git hub client" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPrivacy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{repo.private == null ? View.VISIBLE : View.GONE}"
+            android:text="public"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvRepoName"
+            android:layout_marginStart="20dp"
+            tools:text="Public" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="@{repo.description == null ? View.VISIBLE : View.GONE}"
+            app:layout_constraintTop_toBottomOf="@id/tvRepoName"
+            tools:text="Milimize git hub client" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:visibility="@{repo.language == null ? View.VISIBLE : View.GONE}"
+            android:text="@{repo.language}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDescription"
+            tools:text="Java" />
+        <!--<ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="20dp"
+            android:visibility="@{repo.stargazers_count == null ? View.VISIBLE : View.GONE}"
+            app:layout_constraintStart_toEndOf="@id/tvLang"
+            app:layout_constraintTop_toBottomOf="@id/tvDescription"
+            android:src="@drawable/ic_star"/>-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvStar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:visibility="@{repo.stargazers_count == null ? View.VISIBLE : View.GONE}"
+            android:text="@{repo.stargazers_count.toString()}"
+            android:layout_marginStart="20dp"
+            android:drawableLeft="@drawable/ic_star"
+            android:drawablePadding="5dp"
+            app:layout_constraintStart_toEndOf="@id/tvLang"
+            app:layout_constraintTop_toBottomOf="@id/tvDescription"
+            tools:text="5" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvUpdatedDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:visibility="@{repo.updated_at == null ? View.VISIBLE : View.GONE}"
+            android:text="@{repo.updated_at}"
+            android:layout_marginStart="20dp"
+            app:layout_constraintStart_toEndOf="@id/tvStar"
+            app:layout_constraintTop_toBottomOf="@id/tvDescription"
+            tools:text="Updated on Jan 2, 2018" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/myNavHostFragment"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/bg"
+    android:paddingTop="10dp"
+    android:paddingHorizontal="10dp"
+    android:paddingBottom="20dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvRepoName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blue"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Git hub client" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPrivacy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/background_border"
+        android:gravity="center"
+        android:text="public"
+        android:textSize="8dp"
+        android:textColor="@color/light_grey"
+        app:layout_constraintStart_toEndOf="@id/tvRepoName"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Public" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/light_grey"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvRepoName"
+        tools:text="Milimize git hub client" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvLang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/light_grey"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDescription"
+        tools:text="Java" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvStar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:drawableLeft="@drawable/ic_star"
+        android:drawablePadding="5dp"
+        android:textColor="@color/light_grey"
+        app:layout_constraintStart_toEndOf="@id/tvLang"
+        app:layout_constraintTop_toBottomOf="@id/tvDescription"
+        tools:text="5" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvUpdatedDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/light_grey"
+        app:layout_constraintStart_toEndOf="@id/tvStar"
+        app:layout_constraintTop_toBottomOf="@id/tvDescription"
+        tools:text="Updated on Jan 2, 2018" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
